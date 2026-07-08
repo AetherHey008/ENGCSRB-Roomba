@@ -40,10 +40,14 @@ title: Final Projekt Presentation at "Englisch Einführung in die Fachsprache"
 ## What is Roombas Mission
 **<u> Mission 1: Object follower </u>**
 
+
+
+Our Roomba should always maintain a distance of 15cm from the object. It adjust its position and view depending on where the object is located. This changes the perspective based on the movement and creates a simple, interactive connection between Roomba and the object.
+![](https://avsuwzdjuo.cloudimg.io/v7/_cs_/2025/08/68b02be3ec562/image8.jpeg?w=412&org_if_sml=1)
+
+(Link to padlet) : --> 
 https://padlet.com/mariefrancoisefronieux/coil-between-the-university-of-freiberg-tubaf-and-the-iut-un-xht6kjop91rmsxvs/wish/x5m7aoLAw5yBQkAV
 
-Roomba should always maintain a distance of 15cm from the object. It adjust its position and view depending on where the object is located. This changes the perspective based on the movement and creates a simple, interactive connection between Roomba and the object.
-![](https://avsuwzdjuo.cloudimg.io/v7/_cs_/2025/08/68b02be3ec562/image8.jpeg?w=412&org_if_sml=1)
 ---
 ## Code 
 ```C
@@ -131,7 +135,7 @@ int scanDirection = 1;
 
 void loop() {
 
-  if(millis() - last_measure > 15000 || millis() < 15000) {
+  if(millis() - last_measure > 15000 || millis() < 15000) {  //Start to explain here!
     Serial.println("Start scanning");
     delay(100);
     alvik.brake();
@@ -192,7 +196,9 @@ void loop() {
 ```
 ---
 ## Mission 2: 3D scanner
-The Roomba should digitally capture its surroundings through measurements and create a three-dimensional representation. The scanner collects distance data and process it to create a point cloud that shape and position of objects visible. The collected data is transmitted wirrelessy and displayed as a 3D model in real time.
+Our Roomba should digitally capture its surroundings through measurements and create a three-dimensional representation. The scanner collects distance data (8x8 sensor) and process it to create a point cloud that shape and position of objects visible.
+![](https://www.mdpi.com/applsci/applsci-15-06169/article_deploy/html/images/applsci-15-06169-g008-550.jpg)
+ The collected data is transmitted wirrelessy and displayed as a 3D model in real time.
 ![](https://images.interestingengineering.com/img/iea/QjOdvYq76d/1920px-3-proj2camsvg.png)
 ## Code example
 Code block that runs on the STM, processes sensor data, and sends it to the ESP:
